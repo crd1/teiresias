@@ -1,4 +1,4 @@
-# Teiresis
+# Teiresias
 This is a simple UDP messaging framework. Just include and start publishing and receiving.
 
 All apps including Teiresias running on any machine in your network will know each other. Clients establish flyweight 'connections' and propagate messages they receive to known peers.
