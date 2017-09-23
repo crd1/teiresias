@@ -1,0 +1,30 @@
+option java_package = "de.pangeule.teiresias.proto";
+option optimize_for = LITE_RUNTIME;
+option java_multiple_files=true;
+
+message TeiresiasMessage {
+	required MessageType type = 1;
+	optional ImHere imHere = 2;
+	optional DataBody data = 3;
+}
+
+enum MessageType {
+	WHOS_ALIVE = 1;
+	IM_ALIVE = 2;
+	PING = 3;
+	PONG = 4;
+	IM_HERE = 5;
+	IM_DEAD = 6;
+	DATA = 7;
+}
+
+message ImHere {
+	required int32 port = 1;
+}
+
+message DataBody {
+	required string UUID = 1;
+	repeated string knownReceivers = 2;
+	repeated string targetApp = 3;
+	required bytes content = 4;
+}
